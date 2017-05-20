@@ -30,6 +30,7 @@ gem 'omniauth', '~> 1.6', '>= 1.6.1'
 
 gem 'awesome_print'
 gem 'peek'
+gem 'active_model_serializers'
 
 group :production do
   gem 'pg'
