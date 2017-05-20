@@ -80,4 +80,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.deliver_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :port           => ENV['MAILGUN_SMTP_PORT'],
+      :server         => ENV['MAILGUN_SMTP_SERVER'],
+      :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+      :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+      :domain         => ENV['treasury-love-api-dev.treasury.love'],
+      :authentication => :plain,
+  }
 end
