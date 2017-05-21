@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Entries API', type: :request, focus: :true do
   # Initialize the test data
   let!(:user) { create(:user) }
-  let!(:entries) { create_list(:entry, 20, user_id: user.id) }
+  let!(:partner) { create(:user) }
+  let!(:entries) { create_list(:entry, 20, user_id: user.id, linked_user_id: partner.id) }
   let(:user_id) { user.id }
   let(:id) { entries.first.id }
 
@@ -29,7 +30,7 @@ RSpec.describe 'Entries API', type: :request, focus: :true do
   # Test suite for POST /todos
   describe 'POST /entries' do
     # valid payload
-    let(:valid_attributes) { { content: 'Learn Elm', created_by: user_id } }
+    let(:valid_attributes) { { content: 'Learn Elm', created_by: user_id, linked_user_id: partner.id } }
 
     before do
       @auth_headers = user.create_new_auth_token

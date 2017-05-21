@@ -36,7 +36,7 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.permit(:content, :occurred_on)
+    params.permit(:content, :occurred_on, :linked_user_id)
   end
 
   def set_user

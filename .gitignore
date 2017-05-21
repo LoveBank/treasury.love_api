@@ -62,3 +62,7 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+app/controllers/treasury.love.api.crt
+app/controllers/treasury.love.api.csr
+app/controllers/treasury.love.api.key
+app/controllers/treasury.love.api.pass.key
