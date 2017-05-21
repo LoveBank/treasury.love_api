@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen'
   gem 'pry-rails'
   gem 'guard-rspec', require: false
+  gem 'letter_opener'
 end
 
 group :test do
