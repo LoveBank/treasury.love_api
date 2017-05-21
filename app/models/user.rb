@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
           :recoverable, :rememberable, :trackable, :omniauthable
   include DeviseTokenAuth::Concerns::User
   has_many :entries, dependent: :destroy
+  after_create :send_welcome_email
 
 
   # Query for entries that the partner has made
@@ -13,6 +14,11 @@ class User < ActiveRecord::Base
     last_report_id = 0
     last_report_id = last_daily_report_id unless last_daily_report_id.nil?
     Entry.where('linked_user_id =? and id > ?', id, last_report_id)
+  end
+
+  private
+  def send_welcome_email
+    WelcomeMailer.welcome(self).deliver_later
   end
 
 end
