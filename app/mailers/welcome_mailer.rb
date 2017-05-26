@@ -9,6 +9,6 @@ class WelcomeMailer < ApplicationMailer
     @greeting = "Hi"
     @user = user
 
-    mail to: user.email
+    mail( to: user.email, subject: 'Welcome Treasury.Love - Begin your Love-Journaling Journey')
   end
 end
