@@ -6,9 +6,9 @@ class WelcomeMailer < ApplicationMailer
   #   en.welcome_mailer.welcome.subject
   #
   def welcome(user)
-    @greeting = "Hi"
+    @greeting = "Hi #{user.name},"
     @user = user
 
-    mail( to: user.email, subject: 'Welcome Treasury.Love - Begin your Love-Journaling Journey')
+    mail( to: @user.email, subject: 'Welcome to Treasury.Love - Begin your Love-Journaling Journey')
   end
 end
