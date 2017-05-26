@@ -84,10 +84,10 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :port           => ENV['MAILGUN_SMTP_PORT'],
-      :server         => ENV['MAILGUN_SMTP_SERVER'],
+      :address        => ENV['MAILGUN_SMTP_SERVER'],
       :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
       :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-      :domain         => ENV['treasury-love-api-dev.treasury.love'],
+      :domain         => ENV['MAILGUN_DOMAIN'],
       :authentication => :plain,
   }
 end
