@@ -7,6 +7,7 @@ class WelcomeMailer < ApplicationMailer
   #
   def welcome(user)
     @greeting = "Hi"
+    @user = user
 
     mail to: user.email
   end
