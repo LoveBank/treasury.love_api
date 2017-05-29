@@ -31,6 +31,7 @@ gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'awesome_print'
 gem 'peek'
 gem 'active_model_serializers'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :production do
   gem 'pg'
