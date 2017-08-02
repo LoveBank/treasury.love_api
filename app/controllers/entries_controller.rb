@@ -7,7 +7,7 @@ class EntriesController < ApplicationController
   # GET /entries
   def index
     logger.debug "Getting entries for current user #{current_user.inspect}"
-    json_response(@user.entries.sort_by(:created_at))
+    json_response(@user.entries.order(created_at: :desc))
   end
 
   # GET /entries/:id
